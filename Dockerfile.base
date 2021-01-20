@@ -1,5 +1,5 @@
 FROM python:alpine
-COPY requirements.txt
+COPY requirements.txt .
 RUN apk add --no-cache \
         libressl-dev \
         build-base \
