@@ -7,4 +7,3 @@ export NEXUS3_PASSWORD=$4
 
 set -xf
 out=$(nexus3 $NEXUS3_ACTION $6 $5)
-echo "::set-output name=out::$out"
