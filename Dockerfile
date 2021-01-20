@@ -12,3 +12,4 @@ RUN apk add --no-cache \
         musl-dev \
         libffi-dev \
         build-base
+ENTRYPOINT [ "/action/entrypoint.sh" ]
