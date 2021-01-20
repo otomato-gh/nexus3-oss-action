@@ -26,8 +26,8 @@ jobs:
       - name: Publish files
         uses: otomato-gh/nexus3-oss-action@main
         with:
-          serverUrl: http://nexus.texel.live
-          username: ${{ secrets.DOCKER_USER }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          serverUrl: ${{ secrets.NN }}
+          username: ${{ secrets.NU }}
+          password: ${{ secrets.NP }}
           repositorypath: test-me/1.0.0
           files: ./files/

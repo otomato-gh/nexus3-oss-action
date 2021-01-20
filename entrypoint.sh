@@ -1,9 +1,10 @@
-#!/bin/sh -xf
+#!/bin/sh
 
-NEXUS3_ACTION=$1
-NEXUS3_URL=$2
-NEXUS3_USERNAME=$3
-NEXUS3_PASSWORD=$4
+export NEXUS3_ACTION=$1
+export NEXUS3_URL=$2
+export NEXUS3_USERNAME=$3
+export NEXUS3_PASSWORD=$4
 
+set -xf
 out=$(nexus3 $NEXUS3_ACTION $6 $5)
 echo "::set-output name=out::$out"
