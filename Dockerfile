@@ -1,15 +1,4 @@
-FROM python:alpine
-COPY . /action
+FROM otomato:nexus3-cli
+COPY entrypoint.sh /action
 WORKDIR /action
-RUN apk add --no-cache \
-        libressl-dev \
-        build-base \
-        musl-dev \
-        libffi-dev && \
-    pip install -r requirements.txt && \
-    apk del \
-        libressl-dev \
-        musl-dev \
-        libffi-dev \
-        build-base
 ENTRYPOINT [ "/action/entrypoint.sh" ]
