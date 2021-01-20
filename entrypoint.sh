@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/sh -xf
 
 NEXUS3_ACTION=$1
 NEXUS3_URL=$2

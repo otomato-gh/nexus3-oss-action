@@ -30,4 +30,4 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           repositorypath: test-me/1.0.0
-          filename: ./files/
+          files: ./files/
