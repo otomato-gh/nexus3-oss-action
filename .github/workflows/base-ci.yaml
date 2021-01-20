@@ -1,0 +1,19 @@
+name: CI
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build-docker
+        uses: docker/build-push-action@v1
+        with:
+          path: Dockerfile.base
+          username: ${{ secrets.OTO_DOCKER_USER }}
+          password: ${{ secrets.OTO_DOCKER_PASSWORD }}
+          repository: otomato/nexus3-cli
+          tags: latest
+          tag_with_ref: true
+          tag_with_sha: true
+        id: build_docker
