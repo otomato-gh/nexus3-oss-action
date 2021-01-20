@@ -1,0 +1,36 @@
+name: 'Nexus Repository Action'
+author: 'Otomato'
+description: 'Interact with Nexus OSS Repository from Github Actions.'
+inputs:
+  action:
+    description: 'Define action (upload is default)'
+    required: false
+    default: "upload"
+  serverUrl:
+    description: 'Nexus Repository Server URL'
+    required: true
+  username:
+    description: 'Username to connect to Nexus Repo'
+    required: true
+  password:
+    description: 'Password to connect to Nexus Repo'
+    required: true
+  repositorypath:
+    description: 'Target repository on Nexus Repo and the path e.g. maven-releases/myjar/1.0.0'
+    required: true
+  files:
+    description: 'File(s) to publish'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.action }}
+    - ${{ inputs.serverUrl }}
+    - ${{ inputs.username }}
+    - ${{ inputs.password }}
+    - ${{ inputs.repositorypath}}
+    - ${{ inputs.files }}
+branding:
+  icon: 'package'
+  color: 'gray-dark'
